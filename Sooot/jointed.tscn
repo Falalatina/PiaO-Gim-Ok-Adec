@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://veglmh230ms1"]
+
+[ext_resource type="PackedScene" uid="uid://cdbh5atvp16km" path="res://concret.tscn" id="1_l43hf"]
+
+[node name="Node" type="Node2D"]
+
+[node name="Concret2" parent="." instance=ExtResource("1_l43hf")]
+position = Vector2(82, -1)
+
+[node name="Concret" parent="." instance=ExtResource("1_l43hf")]
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+position = Vector2(16, 30)
+rotation = -1.57773
+node_a = NodePath("../Concret")
+node_b = NodePath("../Concret2")
+length = 81.0
