@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://q8aahbjjp1v7"]
+
+[ext_resource type="Texture2D" uid="uid://6rmt4eqj1b6x" path="res://Transition.png" id="1_da5qs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yp3ok"]
+size = Vector2(29.6693, 29.7186)
+
+[node name="enemy" type="CharacterBody2D"]
+position = Vector2(450, 128)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(93, 80)
+texture = ExtResource("1_da5qs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D"]
+position = Vector2(0.348991, 0.00608826)
+rotation = 2.37365
+shape = SubResource("RectangleShape2D_yp3ok")

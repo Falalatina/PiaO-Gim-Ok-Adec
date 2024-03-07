@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://cdbh5atvp16km"]
+
+[ext_resource type="Texture2D" uid="uid://dgulbf2eb0bdp" path="res://Traps/Rock Head/Blink (42x42).png" id="1_spinn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8w3hb"]
+atlas = ExtResource("1_spinn")
+region = Rect2(0, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q3l1h"]
+atlas = ExtResource("1_spinn")
+region = Rect2(42, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1mcj"]
+atlas = ExtResource("1_spinn")
+region = Rect2(84, 0, 42, 42)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abfcu"]
+atlas = ExtResource("1_spinn")
+region = Rect2(126, 0, 42, 42)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1tf3v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8w3hb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q3l1h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1mcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abfcu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12bn0"]
+size = Vector2(57, 79)
+
+[node name="Concret" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 7
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(16, 30)
+scale = Vector2(1.7619, 2.42857)
+sprite_frames = SubResource("SpriteFrames_1tf3v")
+autoplay = "default"
+frame_progress = 0.445992
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15.5, 29.5)
+shape = SubResource("RectangleShape2D_12bn0")

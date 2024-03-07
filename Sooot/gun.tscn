@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5on0o1r6ikmf"]
+
+[ext_resource type="Script" path="res://gun.gd" id="1_gsgyv"]
+[ext_resource type="Texture2D" uid="uid://b1fe2pnymqak8" path="res://Other/Dust Particle.png" id="1_ib6kl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c27wu"]
+radius = 298.136
+
+[node name="Gun" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_gsgyv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_c27wu")
+
+[node name="weaponPivit" type="Marker2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="weaponPivit"]
+texture_filter = 1
+position = Vector2(60, 0)
+scale = Vector2(3.5625, 3.3125)
+texture = ExtResource("1_ib6kl")
+
+[node name="ShootingPoint" type="Marker2D" parent="weaponPivit/Sprite2D"]
+unique_name_in_owner = true
+position = Vector2(1.40351, 0)
