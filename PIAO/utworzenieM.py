@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-sciezka = './stare2.jpg'
+sciezka = './stare.jpg'
 
 def wczytaj_obraz(sciezka):
  # Wczytanie obrazu z podanej ścieżki
@@ -29,7 +29,7 @@ def testowanie_i_ocena_skutecznosci(obraz_wejsciowy):
   # cv2.destroyAllWindows()
 
 def create_mask(image):
-  mask = cv2.inRange(image, np.array([155 ,155, 155]), np.array([225, 225, 225]))
+  mask = cv2.inRange(image, np.array([150 ,150, 150]), np.array([225, 225, 225]))
   return mask
 
 if __name__ == "__main__":
@@ -39,7 +39,7 @@ if __name__ == "__main__":
  # Utworzenie maski
   maska = create_mask(stara_fotografia)
  # Ścieżka do zapisu maski
-  mask_path = 'maski.jpg'
+  mask_path = 'maski2.jpg'
  # Zapis maski do pliku
   cv2.imwrite(mask_path, maska)
  # Testowanie i ocena skuteczności narzędzia

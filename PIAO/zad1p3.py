@@ -43,7 +43,7 @@ def restore_damaged_areas(image, damage_mask):
 #  Returns:
 #  - restored_image (numpy.ndarray): Obraz z przywróconymi obszarami.
 #  """
- img = cv2.imread('maski.jpg', 0)
+ img = cv2.imread('maski2.jpg', 0)
  type(img)
 
  img.shape
@@ -51,7 +51,7 @@ def restore_damaged_areas(image, damage_mask):
 
  restored_image = cv2.inpaint(image, damage_mask, inpaintRadius=10, flags=cv2.INPAINT_TELEA)
  return restored_image
-def display_images(original_image, marked_image, restored_image, restored_image2 ):
+def display_images(original_image, marked_image, restored_image ):
 #  """
 #  Wyświetla obraz przed i po procesie restauracji.
 #  Parameters:
@@ -73,23 +73,23 @@ def display_images(original_image, marked_image, restored_image, restored_image2
  plt.title("Restored Image")
  plt.axis("off")
 
- plt.subplot(1, 3, 3)
- plt.imshow(cv2.cvtColor(restored_image2, cv2.COLOR_BGR2RGB))
- plt.title("Restored Image 2")
- plt.axis("off")
+#  plt.subplot(1, 3, 3)
+#  plt.imshow(cv2.cvtColor(restored_image2, cv2.COLOR_BGR2RGB))
+#  plt.title("Restored Image 2")
+#  plt.axis("off")
 
  plt.show()
 # Ścieżka do pliku z obrazem starych fotografii
-image_path = "stare2.jpg"
+image_path = "stare.jpg"
 # Wczytaj obraz
 old_photo = load_image(image_path)
 # Stwórz maskę uszkodzeń (na razie pustą)
 damage_mask = create_damage_mask(old_photo.shape)
 
 print(damage_mask)
-test = 'maski.jpg'
+test = 'maski2.jpg'
 
-img = cv2.imread('maski.jpg', 0)
+img = cv2.imread('maski2.jpg', 0)
 
 res_path = 'restored.jpg'
 r2_photo = load_image(res_path)
@@ -105,8 +105,8 @@ print(b)
 # Tutaj możesz dodać kod do interaktywnego zaznaczania obszarów na obrazie.
 # Przywróć uszkodzone obszary
 restored_photo = restore_damaged_areas(old_photo, b)
-cv2.imwrite(res_path, restored_photo)
-restored_photo2 = restore_damaged_areas(r2_photo, b)
+#cv2.imwrite(res_path, restored_photo)
+#restored_photo2 = restore_damaged_areas(r2_photo, b)
 #r2 = np.matrix(restored_photo2)
 # Wyświetl wyniki
-display_images(old_photo, mark_damaged_areas(old_photo, b), restored_photo, restored_photo2)
+display_images(old_photo, mark_damaged_areas(old_photo, b), restored_photo)
