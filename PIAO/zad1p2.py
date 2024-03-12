@@ -21,7 +21,7 @@ flags=cv2.INPAINT_TELEA)
  plt.axis("off")
  plt.show()
 # Ścieżki do obrazu starych fotografii i odpowiadającej mu maski
-image_path = "stare2.jpg"
-mask_path = "maski.jpg"
+image_path = "stare3.jpg"
+mask_path = "maski3.jpg"
 # Przywróć i popraw starą fotografię
 restore_old_photo(image_path, mask_path)

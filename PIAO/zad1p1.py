@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-sciezka = './stare.jpg'
+sciezka = './stare3.jpg'
 
 def wczytaj_obraz(sciezka):
  # Wczytanie obrazu z podanej ścieżki
@@ -9,12 +9,12 @@ def wczytaj_obraz(sciezka):
  return obraz
 def eliminacja_zarysowan(obraz):
  # Zastosowanie filtra do eliminacji zarysowań (np. MedianBlur)
- obraz_wyjsciowy = cv2.medianBlur(obraz, 3)
+ obraz_wyjsciowy = cv2.medianBlur(obraz, 7)
  return obraz_wyjsciowy
 def wypelnij_brakujace_fragmenty(obraz):
  # Zastosowanie algorytmu Inpainting do wypełnienia brakujących fragmentów
- maska = cv2.inRange(obraz, np.array([0, 0, 0]), np.array([20, 20, 20]))
- obraz_wyjsciowy = cv2.inpaint(obraz, maska, 3, cv2.INPAINT_TELEA)
+ maska = cv2.inRange(obraz, np.array([0, 0, 0]), np.array([70, 70, 70]))
+ obraz_wyjsciowy = cv2.inpaint(obraz, maska, 7, cv2.INPAINT_TELEA)
  return obraz_wyjsciowy
 def testowanie_i_ocena_skutecznosci(obraz_wejsciowy):
  # Przetestowanie narzędzia na różnych starych fotografiach

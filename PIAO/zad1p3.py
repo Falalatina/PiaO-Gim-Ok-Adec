@@ -43,7 +43,7 @@ def restore_damaged_areas(image, damage_mask):
 #  Returns:
 #  - restored_image (numpy.ndarray): Obraz z przywróconymi obszarami.
 #  """
- img = cv2.imread('maski2.jpg', 0)
+ img = cv2.imread('maski3.jpg', 0)
  type(img)
 
  img.shape
@@ -80,16 +80,16 @@ def display_images(original_image, marked_image, restored_image ):
 
  plt.show()
 # Ścieżka do pliku z obrazem starych fotografii
-image_path = "stare.jpg"
+image_path = "stare3.jpg"
 # Wczytaj obraz
 old_photo = load_image(image_path)
 # Stwórz maskę uszkodzeń (na razie pustą)
 damage_mask = create_damage_mask(old_photo.shape)
 
 print(damage_mask)
-test = 'maski2.jpg'
+test = 'maski3.jpg'
 
-img = cv2.imread('maski2.jpg', 0)
+img = cv2.imread('maski3.jpg', 0)
 
 res_path = 'restored.jpg'
 r2_photo = load_image(res_path)
