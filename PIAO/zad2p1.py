@@ -25,11 +25,11 @@ magnitude_spectrum = 10 * np.log(np.abs(dft_shift))
 rows, cols = image.shape
 crow, ccol = rows // 2 , cols //  2
 mask = np.zeros((rows, cols), np.uint8)
-r = 10000
+r = 5
 center = [crow, ccol]
 x, y = np.ogrid[:rows, :cols]
 mask_area = (x - center[0]) ** 2 + (y - center[1]) ** 2 <= r*r
-mask[mask_area] = 2
+mask[mask_area] = 100
 # Filtracja w dziedzinie częstotliwości
 fshift = dft_shift * mask
 f_ishift = np.fft.ifftshift(fshift)
