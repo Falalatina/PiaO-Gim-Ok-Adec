@@ -15,17 +15,17 @@ dft = np.fft.fft2(image)
 dft_shift = np.fft.fftshift(dft)
 # Wyświetlenie widma częstotliwościowego
 magnitude_spectrum = 10 * np.log(np.abs(dft_shift))
-# plt.imshow(magnitude_spectrum, cmap='gray')
-# plt.title('Magnitude Spectrum')
-# plt.axis('off')
-# plt.show()
+plt.imshow(magnitude_spectrum, cmap='gray')
+plt.title('Magnitude Spectrum')
+plt.axis('off')
+plt.show()
 
 
 # Tworzenie maski dolnoprzepustowej
 rows, cols = image.shape
-crow, ccol = rows // 2 , cols //  2
+crow, ccol = rows // 20 , cols //  20
 mask = np.zeros((rows, cols), np.uint8)
-r = 5
+r = 90
 center = [crow, ccol]
 x, y = np.ogrid[:rows, :cols]
 mask_area = (x - center[0]) ** 2 + (y - center[1]) ** 2 <= r*r
