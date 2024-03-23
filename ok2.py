@@ -35,13 +35,16 @@ def print_words_after_removal(words, removed_columns):
         print(new_word)
 
 # Przykładowe dane
-k = 7
+k = 3
 words = [
-    "LQCGAPPJAIQNNKHJNFFE",
-    "LHCGAPPJABQNNKHJBFAE",
-    "RQCGSPPJAIQNNKHJNFAE",
-    "LQCGAPPJAIQNNKHJNFFE",
-    "LQCGAPDJFIQNNKHJNFFE"
+    # "LQCGAPPJAIQNNKHJNFFE",
+    # "LHCGAPPJABQNNKHJBFAE",
+    # "RQCGSPPJAIQNNKHJNFAE",
+    # "LQCGAPPJAIQNNKHJNFFE",
+    # "LQCGAPDJFIQNNKHJNFFE"
+    'ABCDE',
+    'ACDAE',
+    'BCDDA'
 ]
 
 wynik=[1,4,6,8,9,16,18]
